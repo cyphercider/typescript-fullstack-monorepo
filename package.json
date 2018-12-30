@@ -1,0 +1,36 @@
+{
+  "name": "typescript-fullstack-monorepo",
+  "version": "1.0.0",
+  "description": "A fullstack example monorepo using typescript, node, react, and mobx.",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/jh23us-boilerplate/typescript-fullstack-boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@material-ui/core": "^3.7.0",
+    "@material-ui/icons": "^3.0.1",
+    "@types/node": "^10.12.18",
+    "@types/react": "^16.7.18",
+    "cors": "^2.8.5",
+    "jsonwebtoken": "^8.4.0",
+    "director": "^1.2.8",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "jss-preset-default": "^4.5.0",
+    "markdown-loader": "^4.0.0",
+    "mobx": "^5.8.0",
+    "mobx-react-lite": "^0.3.4",
+    "prettier": "^1.15.3",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
+    "ts-loader": "^5.3.2",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "typescript": "^3.2.2",
+    "webpack": "^4.28.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.11"
+  }
+}

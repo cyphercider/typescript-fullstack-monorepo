@@ -1,0 +1,50 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "boilerplate-server-watch",
+      "type": "npm",
+      "script": "watch",
+      "path": "packages/boilerplate-server/",
+      "problemMatcher": []
+    },
+    {
+      "label": "boilerplate-server-start",
+      "type": "npm",
+      "script": "start",
+      "path": "packages/boilerplate-server/",
+      "problemMatcher": []
+    },
+    {
+      "label": "boilerplate-client-dev",
+      "type": "npm",
+      "script": "start",
+      "path": "packages/boilerplate-client/",
+      "problemMatcher": []
+    },
+    {
+      "label": "boilerplate-server-all",
+      "dependsOn": ["boilerplate-server-start", "boilerplate-server-watch"],
+      "problemMatcher": []
+    },
+    {
+      "label": "boilerplate-all",
+      "dependsOn": ["boilerplate-server-all", "boilerplate-client-dev"],
+      "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "clean",
+      "path": "packages/boilerplate-server/",
+      "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "watch",
+      "path": "packages/boilerplate-server/",
+      "problemMatcher": []
+    }
+  ]
+}

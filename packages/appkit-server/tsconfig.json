@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.base",
+  "compilerOptions": {
+    "outDir": "lib",
+    "baseUrl": "..",
+    "lib": ["es2018"]
+  },
+  "include": ["./src/**/*", "../appkit-server/src/**/*"]
+}

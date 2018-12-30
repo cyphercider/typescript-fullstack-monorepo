@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.base",
+  "compilerOptions": {
+    "outDir": "dist",
+    "jsx": "react",
+    "baseUrl": "..",
+    "lib": ["es2018", "dom"]
+  },
+  "include": ["./src/**/*"]
+}

@@ -1,0 +1,12 @@
+{
+  "swagger": {
+    "outputDirectory": "./dist",
+    "entryFile": "./src/routes/index.ts",
+    "host": "",
+    "version": "",
+    "name": "Kolbot Dashboard",
+    "description": "A web client for managing Kolbot",
+    "license": "ISC",
+    "basePath": ""
+  }
+}

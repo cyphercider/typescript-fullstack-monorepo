@@ -1,0 +1,14 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "set NODE_ENV=DEV && webpack-dev-server --progress --inline",
+    "pack": "set NODE_ENV=production && webpack"
+  },
+  "author": "Jeff Hull",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}

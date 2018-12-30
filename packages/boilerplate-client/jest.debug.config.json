@@ -1,0 +1,19 @@
+{
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+  "watchPathIgnorePatterns": ["<rootDir>/node_modules/"],
+  "testPathIgnorePatterns": ["/node_modules/", "/src/"],
+  "moduleNameMapper": {
+    "^@root(.*)$": "<rootDir>/dist$1",
+    "^@utils(.*)$": "<rootDir>/dist/utils$1",
+    "^@components(.*)$": "<rootDir>/dist/components/generic$1",
+    "^@stores(.*)$": "<rootDir>/dist/stores$1",
+    "^@styles(.*)$": "<rootDir>/dist/styles$1",
+    "^@model(.*)$": "<rootDir>/dist/model$1",
+    "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
+    "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+  }
+}

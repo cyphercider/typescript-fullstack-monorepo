@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "baseUrl": "packages",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es2018"],
+    "module": "commonjs",
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "target": "ES2016",
+    "strictNullChecks": true,
+    "paths": {
+      "@appkit-client/*": ["appkit-client/src/*"],
+      "@appkit-server/*": ["appkit-server/src/*"],
+      "@appkit-common/*": ["appkit-common/src/*"],
+      "@bps/*": ["boilerplate-server/src/*"],
+      "@bpc/*": ["boilerplate-client/src/*"]
+    }
+  }
+}
