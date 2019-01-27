@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "set NODE_ENV=DEV && webpack-dev-server --progress --inline",
-    "pack": "set NODE_ENV=production && webpack"
+    "start": "webpack-dev-server --progress --inline",
+    "pack": "NODE_ENV=production webpack",
+    "packWindows": "set NODE_ENV=production && webpack"
   },
   "author": "Jeff Hull",
   "license": "MIT",

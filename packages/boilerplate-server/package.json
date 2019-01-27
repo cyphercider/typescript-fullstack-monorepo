@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "A boilerplate node.js server using typescript",
   "scripts": {
-    "watch": "set NODE_ENV=DEV && webpack",
-    "pack": "set NODE_ENV=production && webpack",
+    "watch": "webpack",
+    "pack": "NODE_ENV=production webpack",
+    "packWindows": "set NODE_ENV=production && webpack",
     "start": "set NODE_ENV=DEV && nodemon --delay 3000ms ./dist/server.js",
     "clean": "rimraf dist",
     "startServer": "set NODE_ENV=production && node ./dist/server.js"
