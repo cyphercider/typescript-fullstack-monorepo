@@ -1,6 +1,6 @@
 import { User } from '@appkit-common/model/auth'
 import { Theme } from '@material-ui/core'
-import * as React from 'React'
+import * as React from 'react'
 
 export interface MarkdownTheme {
   h1?: React.CSSProperties
