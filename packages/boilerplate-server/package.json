@@ -6,9 +6,9 @@
     "watch": "webpack",
     "pack": "NODE_ENV=production webpack",
     "packWindows": "set NODE_ENV=production && webpack",
-    "start": "set NODE_ENV=DEV && nodemon --delay 3000ms ./dist/server.js",
+    "start": "nodemon --delay 3000ms ./dist/server.js",
     "clean": "rimraf dist",
-    "startServer": "set NODE_ENV=production && node ./dist/server.js"
+    "startServer": "node ./dist/server.js"
   },
   "author": "Jeff Hull",
   "license": "ISC",
