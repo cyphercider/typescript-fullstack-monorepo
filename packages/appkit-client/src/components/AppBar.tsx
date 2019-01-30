@@ -52,7 +52,7 @@ export const AppBar = (props: AppBarProps) => {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="title" color="inherit">
+            <Typography variant="h4" color="inherit">
               {props.title}
             </Typography>
           </div>

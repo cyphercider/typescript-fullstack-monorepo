@@ -5,6 +5,9 @@ import green from '@material-ui/core/colors/green'
 import { MarkdownTheme } from '../../model/config'
 
 export const blueMuiTheme: MaterialUITheme = createMuiTheme({
+  typography: {
+    useNextVariants: true
+  },
   palette: {
     primary: blue,
     secondary: green
