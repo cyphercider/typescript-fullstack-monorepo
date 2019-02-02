@@ -9,7 +9,6 @@ A fullstack boilerplate application using typescript, node, react, and mobx.
 ```
 git clone []
 cd []
-npm i -g rimraf nodemon
 npm i
 cd packages/boilerplate-server && npm i
 ```
