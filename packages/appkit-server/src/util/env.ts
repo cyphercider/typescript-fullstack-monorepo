@@ -29,13 +29,6 @@ export function inProduction(): boolean {
 }
 
 /**
- * returns the location on disk of the current javascript file
- */
-export function getCurrentFileDirectory(): string {
-  return __dirname
-}
-
-/**
  * returns the location on disk of the location of node.exe which is running
  */
 export function getNodeExeWorkingDirectory(): string {
