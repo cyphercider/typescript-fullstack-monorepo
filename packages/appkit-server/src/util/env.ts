@@ -31,6 +31,6 @@ export function inProduction(): boolean {
 /**
  * returns the location on disk of the location of node.exe which is running
  */
-export function getNodeExeWorkingDirectory(): string {
+export function getWorkingDirectory(): string {
   return process.cwd()
 }
