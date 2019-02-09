@@ -23,6 +23,7 @@ export default class ViewStore {
   @action.bound
   setPage(page: AppPage) {
     if (page !== this.currentPage) {
+      console.log(`setting page to ${page}`)
       this.currentPage = page
     }
   }
@@ -59,7 +60,8 @@ export default class ViewStore {
     autorun(() => {
       const path = this.currentRoute
       if (path !== window.location.pathname)
-        window.history.pushState(null, '', path)
+        console.log(`pushing state ${path}`)
+      window.history.pushState(null, '', path)
     })
   }
 }
