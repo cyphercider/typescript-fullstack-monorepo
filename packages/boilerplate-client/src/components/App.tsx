@@ -33,7 +33,6 @@ jss.createStyleSheet(styles as any).attach()
 export const App = observer(() => {
   const store = React.useContext(StoreContext)
   const currentPage: JSX.Element = useComputed(() => {
-    console.log(`in useComputed on apppage ${store.viewStore.currentPage}`)
     switch (store.viewStore.currentPage) {
       case AppPage.Home:
         return <Home />
