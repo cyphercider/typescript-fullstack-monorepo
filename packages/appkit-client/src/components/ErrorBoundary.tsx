@@ -1,4 +1,4 @@
-import * as React from 'React'
+import * as React from 'react'
 import { observable, runInAction } from 'mobx'
 
 export class ErrorBoundary extends React.Component {
