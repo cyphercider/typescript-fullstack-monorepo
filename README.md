@@ -1,4 +1,4 @@
-# Typescript Fullstack Boilerplate
+# Typescript Fullstack Monorepo
 
 A fullstack boilerplate application using typescript, node, react, and mobx.
 
@@ -7,8 +7,8 @@ A fullstack boilerplate application using typescript, node, react, and mobx.
 ## Install dependencies
 
 ```
-git clone []
-cd []
+git clone https://github.com/jeffkhull/typescript-fullstack-monorepo.git
+cd typescript-fullstack-monorepo
 npm i
 cd packages/boilerplate-server && npm i
 ```
