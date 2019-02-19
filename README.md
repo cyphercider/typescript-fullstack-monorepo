@@ -49,6 +49,14 @@ This boilerplate uses my current preferred development stack. I've moved on from
 
 I've been impressed at the active role Microsoft has taken in the open source community, in large part caused (as far as I can tell) by the leadership of [Satya Nadella](https://twitter.com/satyanadella). Typescript is one Microsoft project whose momentum, quality, and versatility are impressive. I started with vanilla ES6 and after some time in development, came to appreciate the power of strong typing and static analysis. Many popular open source projects have been adopting typescript. Angular was an early adopter, and recently, Vue.js [announced version 3.0 was being written in typescript](https://medium.com/the-vue-point/plans-for-the-next-iteration-of-vue-js-777ffea6fabf). My first exposure to strong typing in javascript was [this video](https://www.youtube.com/watch?v=Qiqsg02nXFE), and several talks by [Andrews Hejlsberg](https://twitter.com/ahejlsberg) shed light on the design and philosophy behind Typescript. The javascript community as a whole has seen a flurry of innovation in the past few years, being rekindled perhaps with ES6 (AKA ES2015) and the leadership of the folks on the [TC39](https://github.com/tc39/proposals). Typescript's commitment to the community and commitment to support all official javascript features, so that it is a true superset and maintains compatibility with javascript as a whole, coupled with the power of its associated tooling has made Typescript the current clear choice for my projects.
 
+### Cons of Typescript
+
+I recently came across [this article](https://medium.com/javascript-scene/the-typescript-tax-132ff4cb175b) which discusses the cons of Typescript with respect to Javascript. One of my favorite quotes from this article is
+
+`"Interfaces are one of the best features of TypeScript, and I wish this feature was built into JavaScript."`
+
+This comment resonates with me, as interfaces are the one TypeScript feature I have a hard time doing without. They provide a way to explicitly define and enforce the shape of objects, which makes it easier to understand how those values are intended to be used within an application. I think if interfaces were part of standard Javascript, I would seriously consider going back to plain Javascript as my language of choice.
+
 ## Mobx
 
 When I started developing with React, I adopted Redux as my state management library of choice. After working with it for a year or so, I became tired of the amount of code I needed to maintain X piece of shared state in my React application. That's when I ran into the ideas of [Michel Westrate](https://twitter.com/mweststrate) and his React state management library, [Mobx](https://medium.com/@mweststrate/interactive-introduction-to-mobx-and-reactjs-1760e448103c). After putting it off for a while, I tried mobx out in one of my apps and haven't looked back.
