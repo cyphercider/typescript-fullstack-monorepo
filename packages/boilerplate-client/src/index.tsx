@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { ErrorBoundary } from '@appkit-client/index'
-import RootStore from '@bpc/stores/RootStore'
+import RootStore from '@client/stores/RootStore'
 import { configure } from 'mobx'
 import { App } from './components/App'
 

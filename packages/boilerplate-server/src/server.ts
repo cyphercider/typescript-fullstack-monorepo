@@ -1,9 +1,9 @@
 import * as express from 'express'
 import * as http from 'http'
 import * as timeUtils from '@appkit-server/util/time'
-import { mountMiddleware } from '@bps/config/middleware'
-import { createRoutes } from '@bps/routes/index'
-import { config } from '@bps/config/config'
+import { mountMiddleware } from '@server/config/middleware'
+import { createRoutes } from '@server/routes/index'
+import { config } from '@server/config/config'
 
 if (config.nodeEnvironment === 'development') {
   require('source-map-support').install()

@@ -1,4 +1,4 @@
-import * as fetchUtil from '@bpc/util/fetch'
+import * as fetchUtil from '@client/util/fetch'
 import * as authModel from '@appkit-common/model/auth'
 
 const endpoints = {

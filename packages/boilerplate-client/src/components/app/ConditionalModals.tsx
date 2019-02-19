@@ -4,7 +4,7 @@ import { InformationModal } from '@appkit-client/components/InformationModal'
 import { SingleTextInputModal } from '@appkit-client/components/SingleTextInputModal'
 import { LoginModal } from '@appkit-client/index'
 import * as authModel from '@appkit-common/model/auth'
-import { StoreContext } from '@bpc/index'
+import { StoreContext } from '@client/index'
 import { observer } from 'mobx-react-lite'
 
 export const ConditionalModals = observer(() => {

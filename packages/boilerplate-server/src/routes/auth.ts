@@ -6,7 +6,7 @@ import {
   // CheckTokenResponse
 } from '@appkit-common/model/auth'
 import * as authUtil from '@appkit-server/util/auth'
-import { config } from '@bps/config/config'
+import { config } from '@server/config/config'
 
 import { Express } from 'express'
 
