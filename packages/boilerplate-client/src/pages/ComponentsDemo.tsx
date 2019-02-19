@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Typography } from '@material-ui/core'
 import { ButtonSimple } from '@appkit-client/index'
-import { StoreContext } from '@bpc/index'
+import { StoreContext } from '@client/index'
 
 export const ComponentsDemo = () => {
   const store = React.useContext(StoreContext)

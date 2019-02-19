@@ -5,17 +5,17 @@ import {
   HooksDemo,
   ComponentsDemo,
   ServerApiDemo
-} from '@bpc/pages/index'
+} from '@client/pages/index'
 import { AppContainer } from '@appkit-client/index'
 import { AppkitMenuItem } from '@appkit-client/index'
-import { AppPage } from '@bpc/stores/ViewStore'
+import { AppPage } from '@client/stores/ViewStore'
 import { Paper } from '@material-ui/core'
 import { config } from '../config/config'
 import { ConditionalModals } from './app/ConditionalModals'
 import jss from 'jss'
 import jssPreset from 'jss-preset-default'
 import { useComputed, observer } from 'mobx-react-lite'
-import { StoreContext } from '@bpc/index'
+import { StoreContext } from '@client/index'
 
 const styles = {
   '@global': {

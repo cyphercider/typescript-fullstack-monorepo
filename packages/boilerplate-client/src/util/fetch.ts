@@ -1,5 +1,5 @@
 import * as fetchUtil from '@appkit-client/util/fetch'
-import { config } from '@bpc/config/config'
+import { config } from '@client/config/config'
 
 export async function postToServerNow(
   endpoint: string,

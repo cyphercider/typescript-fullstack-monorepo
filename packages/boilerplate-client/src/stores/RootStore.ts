@@ -1,5 +1,5 @@
 import { observable } from 'mobx'
-import ViewStore from '@bpc/stores/ViewStore'
+import ViewStore from '@client/stores/ViewStore'
 import NotificationStore from '@appkit-client/stores/NotificationStore'
 import UserStore from './UserStore'
 import InputStore from '@appkit-client/stores/InputStore'

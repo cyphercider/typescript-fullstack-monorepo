@@ -14,8 +14,8 @@
       "@appkit-client/*": ["appkit-client/src/*"],
       "@appkit-server/*": ["appkit-server/src/*"],
       "@appkit-common/*": ["appkit-common/src/*"],
-      "@bps/*": ["boilerplate-server/src/*"],
-      "@bpc/*": ["boilerplate-client/src/*"]
+      "@server/*": ["boilerplate-server/src/*"],
+      "@client/*": ["boilerplate-client/src/*"]
     }
   }
 }

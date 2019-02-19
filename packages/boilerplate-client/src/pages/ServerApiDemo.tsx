@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { Typography } from '@material-ui/core'
 import { ButtonSimple } from '@appkit-client/index'
-import * as serverApi from '@bpc/model/serverApi'
-import { StoreContext } from '@bpc/index'
+import * as serverApi from '@client/model/serverApi'
+import { StoreContext } from '@client/index'
 import { observer } from 'mobx-react-lite'
 
 export const ServerApiDemo = observer(() => {

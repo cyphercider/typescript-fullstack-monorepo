@@ -1,7 +1,7 @@
 import RootStore from './RootStore'
 import { observable, runInAction } from 'mobx'
 import { LoginRequest, User } from '@appkit-common/model/auth'
-import { login } from '@bpc/model/serverApi'
+import { login } from '@client/model/serverApi'
 
 export default class UserStore {
   rootStore: RootStore

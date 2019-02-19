@@ -1,5 +1,5 @@
 import { observable, action, computed, autorun } from 'mobx'
-import RootStore from '@bpc/stores/RootStore'
+import RootStore from '@client/stores/RootStore'
 import { Router } from 'director/build/director'
 
 export enum AppPage {

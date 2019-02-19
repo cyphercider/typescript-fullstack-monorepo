@@ -5,7 +5,7 @@ import {
   CheckTokenRequest,
   CheckTokenResponse
 } from '@appkit-common/model/auth'
-import { config } from '@bps/config/config'
+import { config } from '@server/config/config'
 
 export async function login(req: LoginRequest): Promise<LoginResponse> {
   if (
