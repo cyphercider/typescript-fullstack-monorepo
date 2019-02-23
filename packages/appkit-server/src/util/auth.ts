@@ -1,13 +1,15 @@
 import { sign, verify } from 'jsonwebtoken'
 
-export interface StringContainer {
-  string: string
-}
-
+/**
+ * @returns {string} token
+ */
 export function signJwt(payload: any, secretKey: string): string {
   return sign(payload, secretKey)
 }
 
-export function verifyJwt(jwt: string, secretKey: string): any {
-  return verify(jwt, secretKey) as StringContainer
+/**
+ * @returns {string} decoded token
+ */
+export function verifyJwt(jwt: string, secretKey: string): string {
+  return verify(jwt, secretKey)
 }
