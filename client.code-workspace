@@ -1,17 +1,17 @@
 {
-"folders": [
-	{
-		"path": "packages\\appkit-client"
-	},
-	{
-		"path": "packages\\appkit-common"
-	},
-	{
-		"path": "packages\\boilerplate-client"
-	}
-],
-"settings": {
-  "prettier.singleQuote": true,
-  "prettier.semi": false
-}
+  "folders": [
+    {
+      "path": "packages/appkit-client"
+    },
+    {
+      "path": "packages/appkit-common"
+    },
+    {
+      "path": "packages/boilerplate-client"
+    }
+  ],
+  "settings": {
+    "prettier.singleQuote": true,
+    "prettier.semi": false
+  }
 }
