@@ -1,13 +1,13 @@
 {
   "folders": [
     {
-      "path": "packages\\appkit-common"
+      "path": "packages/appkit-common"
     },
     {
-      "path": "packages\\boilerplate-server"
+      "path": "packages/boilerplate-server"
     },
     {
-      "path": "packages\\appkit-server"
+      "path": "packages/appkit-server"
     }
   ]
 }
