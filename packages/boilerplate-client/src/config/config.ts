@@ -20,8 +20,8 @@ if (config.inDevelopment === true) {
   config.host = 'http://localhost:3000'
 }
 
-console.log(`config object: ${JSON.stringify(config)}`)
-console.log(`process object: ${JSON.stringify(process)}`)
+// console.log(`config object: ${JSON.stringify(config)}`)
+// console.log(`process object: ${JSON.stringify(process)}`)
 
 export function setServerVersion(version: string) {
   config.serverVersion = version

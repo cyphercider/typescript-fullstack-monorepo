@@ -4,6 +4,7 @@ import { ErrorBoundary } from '@appkit-client/index'
 import RootStore from '@client/stores/RootStore'
 import { configure } from 'mobx'
 import { App } from './components/App'
+import { AppPageProvider } from './context/AppPageContext'
 
 configure({ enforceActions: 'observed' })
 
@@ -16,9 +17,11 @@ console.log(`created store context ${typeof StoreContext}`)
 async function renderView() {
   await store.initAllStores()
   ReactDOM.render(
-      <ErrorBoundary>
+    <ErrorBoundary>
+      <AppPageProvider>
         <App />
-      </ErrorBoundary>,
+      </AppPageProvider>
+    </ErrorBoundary>,
     document.getElementById('root')
   )
 }
