@@ -1,6 +1,7 @@
 import { observable, action, computed, autorun } from 'mobx'
 import RootStore from '@client/stores/RootStore'
 import { Router } from 'director/build/director'
+import { changeRoute } from '@client/stores/redux-actions'
 
 export enum AppPage {
   Home = 'Home',
@@ -45,9 +46,18 @@ export default class ViewStore {
 
   startRouter = () => {
     const router = new Router({
-      '/': () => this.setPage(AppPage.Home),
-      '/home': () => this.setPage(AppPage.Home),
-      '/hooks': () => this.setPage(AppPage.HooksDemo),
+      '/': () => {
+        this.setPage(AppPage.Home)
+        changeRoute('/')
+      },
+      '/home': () => {
+        this.setPage(AppPage.Home)
+        changeRoute('/home')
+      },
+      '/hooks': () => {
+        this.setPage(AppPage.HooksDemo)
+        changeRoute('/hooks')
+      },
       '/serverApi': () => this.setPage(AppPage.ServerApiDemo),
       '/components': () => this.setPage(AppPage.ComponentsDemos)
     })
