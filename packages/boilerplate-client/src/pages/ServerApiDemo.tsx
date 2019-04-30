@@ -2,11 +2,11 @@ import * as React from 'react'
 import { Typography } from '@material-ui/core'
 import { ButtonSimple } from '@appkit-client/index'
 import * as serverApi from '@client/model/serverApi'
-import { StoreContext } from '@client/index'
+import { MobxStoreContext } from '@client/index'
 import { observer } from 'mobx-react-lite'
 
 export const ServerApiDemo = observer(() => {
-  const store = React.useContext(StoreContext)
+  const store = React.useContext(MobxStoreContext)
   return (
     <div id="simple-components-showcase">
       <Typography variant="h2">Server Api Demo</Typography>

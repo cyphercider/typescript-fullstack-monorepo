@@ -8,14 +8,17 @@ import {
 } from '@client/pages/index'
 import { AppContainer } from '@appkit-client/index'
 import { AppkitMenuItem } from '@appkit-client/index'
-import { AppPage } from '@client/stores/ViewStore'
+import { AppPage, IState } from '@client/stores/model'
+import {} from '@client/stores/reducer'
 import { Paper } from '@material-ui/core'
 import { config } from '../config/config'
 import { ConditionalModals } from './app/ConditionalModals'
 import jss from 'jss'
 import jssPreset from 'jss-preset-default'
-import { useComputed, observer } from 'mobx-react-lite'
-import { StoreContext } from '@client/index'
+import { observer } from 'mobx-react-lite'
+import { MobxStoreContext } from '@client/index'
+// import { useRedux } from '@client/hooks/useRedux'
+import { useMappedState, useDispatch } from 'redux-react-hook'
 
 const styles = {
   '@global': {
@@ -31,9 +34,22 @@ jss.setup(jssPreset())
 jss.createStyleSheet(styles as any).attach()
 
 export const App = observer(() => {
-  const store = React.useContext(StoreContext)
-  const currentPage: JSX.Element = useComputed(() => {
-    switch (store.viewStore.currentPage) {
+  const mapState = React.useCallback(
+    (state: IState) => ({
+      appPage: state.appPage
+    }),
+    []
+  )
+
+  const state = useMappedState(mapState)
+  const dispatch = useDispatch()
+
+  // const [state, dispatch] = useRedux((state: IState) => ({
+  //   appPage: state.appPage
+  // }))
+
+  const currentPage: JSX.Element = React.useMemo(() => {
+    switch (state.appPage) {
       case AppPage.Home:
         return <Home />
       case AppPage.ComponentsDemos:
@@ -43,38 +59,40 @@ export const App = observer(() => {
       case AppPage.HooksDemo:
         return <HooksDemo />
       default:
-        throw new Error(`Unknown page ${store.viewStore.currentPage}`)
+        throw new Error(`Unknown page ${state.appPage}`)
     }
-  })
+  }, [state.appPage])
 
-  const menuItems: AppkitMenuItem[] = useComputed(() => {
+  const menuItems: AppkitMenuItem[] = React.useMemo(() => {
     return [
       {
         name: 'Home',
         onClick: () => {
-          store.viewStore.setPage(AppPage.Home)
+          dispatch({ type: 'CHANGE_APP_PAGE', page: AppPage.Home })
         }
       },
       {
         name: 'Components Demo',
         onClick: () => {
-          store.viewStore.setPage(AppPage.ComponentsDemos)
+          dispatch({ type: 'CHANGE_APP_PAGE', page: AppPage.ComponentsDemos })
         }
       },
       {
         name: 'Server API Demo',
         onClick: () => {
-          store.viewStore.setPage(AppPage.ServerApiDemo)
+          dispatch({ type: 'CHANGE_APP_PAGE', page: AppPage.ServerApiDemo })
         }
       },
       {
         name: 'Hooks Demo',
         onClick: () => {
-          store.viewStore.setPage(AppPage.HooksDemo)
+          dispatch({ type: 'CHANGE_APP_PAGE', page: AppPage.HooksDemo })
         }
       }
     ]
-  })
+  }, [state.appPage])
+
+  const store = React.useContext(MobxStoreContext)
 
   return (
     <AppContainer

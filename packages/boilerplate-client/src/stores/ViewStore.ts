@@ -1,14 +1,8 @@
 import { observable, action, computed, autorun } from 'mobx'
 import RootStore from '@client/stores/RootStore'
 import { Router } from 'director/build/director'
-import { changeRoute } from '@client/stores/redux-actions'
-
-export enum AppPage {
-  Home = 'Home',
-  HooksDemo = 'HooksDemo',
-  ComponentsDemos = 'ComponentsDemos',
-  ServerApiDemo = 'ServerApiDemo'
-}
+import { changeAppPage } from '@client/stores/redux-actions'
+import { AppPage } from './model'
 
 export default class ViewStore {
   rootStore: RootStore
@@ -25,6 +19,7 @@ export default class ViewStore {
   setPage(page: AppPage) {
     if (page !== this.currentPage) {
       this.currentPage = page
+      changeAppPage(page)
     }
   }
 
@@ -48,15 +43,15 @@ export default class ViewStore {
     const router = new Router({
       '/': () => {
         this.setPage(AppPage.Home)
-        changeRoute('/')
+        console.log(`in ViewStore: going home`)
       },
       '/home': () => {
         this.setPage(AppPage.Home)
-        changeRoute('/home')
+        console.log(`in ViewStore: going home`)
       },
       '/hooks': () => {
         this.setPage(AppPage.HooksDemo)
-        changeRoute('/hooks')
+        console.log(`in ViewStore: going to hooks demo`)
       },
       '/serverApi': () => this.setPage(AppPage.ServerApiDemo),
       '/components': () => this.setPage(AppPage.ComponentsDemos)
@@ -68,8 +63,9 @@ export default class ViewStore {
     router.init()
     autorun(() => {
       const path = this.currentRoute
-      if (path !== window.location.pathname)
+      if (path !== window.location.pathname) {
         window.history.pushState(null, '', path)
+      }
     })
   }
 }

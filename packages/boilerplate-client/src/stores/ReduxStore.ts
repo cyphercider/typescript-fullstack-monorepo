@@ -3,15 +3,7 @@
 import { createStore, Store, compose } from 'redux'
 import reducer from './reducer'
 import { create } from 'redux-react-hook'
-
-export interface IState {
-  route: string
-}
-
-export type Action = {
-  type: 'CHANGE_ROUTE'
-  route: string
-}
+import { AppPage, IState, Action } from './model'
 
 export function makeStore(): Store<IState, Action> {
   return createStore(
@@ -26,7 +18,8 @@ export function makeStore(): Store<IState, Action> {
 }
 
 export const INITIAL_STATE: IState = {
-  route: '/'
+  route: '/',
+  appPage: AppPage.Home
 }
 
 export const { StoreContext, useDispatch, useMappedState } = create<

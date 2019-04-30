@@ -4,32 +4,28 @@ import { ErrorBoundary } from '@appkit-client/index'
 import RootStore from '@client/stores/RootStore'
 import { configure } from 'mobx'
 import { App } from './components/App'
-import { AppPageProvider } from './context/AppPageContext'
-import {
-  StoreContext as ReduxStoreContext,
-  reduxStore
-} from './stores/ReduxStore'
+import { reduxStore } from './stores/ReduxStore'
+import { StoreContext } from 'redux-react-hook'
 
 configure({ enforceActions: 'observed' })
 
 // mobx store
-const store = new RootStore()
+const mobxStore = new RootStore()
+export const MobxStoreContext: React.Context<RootStore> = React.createContext(
+  mobxStore
+)
 
 // redux store
 
-console.log(`created root store ${typeof store}`)
-export const StoreContext: React.Context<RootStore> = React.createContext(store)
-console.log(`created store context ${typeof ReduxStoreContext}`)
-
 async function renderView() {
-  await store.initAllStores()
+  await mobxStore.initAllStores()
   ReactDOM.render(
     <ErrorBoundary>
-      <ReduxStoreContext.Provider value={reduxStore}>
-        <AppPageProvider>
+      <MobxStoreContext.Provider value={mobxStore}>
+        <StoreContext.Provider value={reduxStore}>
           <App />
-        </AppPageProvider>
-      </ReduxStoreContext.Provider>
+        </StoreContext.Provider>
+      </MobxStoreContext.Provider>
     </ErrorBoundary>,
     document.getElementById('root')
   )
