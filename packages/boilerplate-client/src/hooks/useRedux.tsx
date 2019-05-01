@@ -3,7 +3,7 @@ import {
   useMappedState as useMappedStateLib,
   useDispatch
 } from 'redux-react-hook'
-import { IState, Action } from '@client/stores/model'
+import { IState, Action } from '@client/stores/redux-model'
 
 export function useMappedState(
   mapFn: (state: IState) => Partial<IState>

@@ -1,9 +1,9 @@
 // Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 
 import { createStore, Store, compose } from 'redux'
-import reducer from './reducer'
+import reducer from './redux-reducer'
 import { create } from 'redux-react-hook'
-import { AppPage, IState, Action } from './model'
+import { AppPage, IState, Action } from './redux-model'
 
 export function makeStore(): Store<IState, Action> {
   return createStore(
@@ -18,7 +18,6 @@ export function makeStore(): Store<IState, Action> {
 }
 
 export const INITIAL_STATE: IState = {
-  route: '/',
   appPage: AppPage.Home
 }
 

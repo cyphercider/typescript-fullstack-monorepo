@@ -2,7 +2,7 @@ import { observable, action, computed, autorun } from 'mobx'
 import RootStore from '@client/stores/RootStore'
 import { Router } from 'director/build/director'
 import { changeAppPage } from '@client/stores/redux-actions'
-import { AppPage } from './model'
+import { AppPage } from './redux-model'
 
 export default class ViewStore {
   rootStore: RootStore

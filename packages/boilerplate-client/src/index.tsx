@@ -4,7 +4,7 @@ import { ErrorBoundary } from '@appkit-client/index'
 import RootStore from '@client/stores/RootStore'
 import { configure } from 'mobx'
 import { App } from './components/App'
-import { reduxStore } from './stores/ReduxStore'
+import { reduxStore } from './stores/redux-store'
 import { StoreContext } from 'redux-react-hook'
 
 configure({ enforceActions: 'observed' })

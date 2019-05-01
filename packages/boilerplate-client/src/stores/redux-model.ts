@@ -6,7 +6,6 @@ export const enum AppPage {
 }
 
 export interface IState {
-  route: string
   appPage: AppPage
 }
 
