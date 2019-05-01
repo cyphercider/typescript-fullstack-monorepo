@@ -59,17 +59,19 @@ This comment resonates with me, as interfaces are the one TypeScript feature I h
 
 ## Mobx
 
-When I started developing with React, I adopted Redux as my state management library of choice. After working with it for a year or so, I became tired of the amount of code I needed to maintain X piece of shared state in my React application. That's when I ran into the ideas of [Michel Westrate](https://twitter.com/mweststrate) and his React state management library, [Mobx](https://medium.com/@mweststrate/interactive-introduction-to-mobx-and-reactjs-1760e448103c). After putting it off for a while, I tried mobx out in one of my apps and haven't looked back.
+When I started developing with React, I adopted Redux as my state management library of choice. After working with it for a year or so, I became tired of the amount of code I needed to maintain X piece of shared state in my React application. That's when I ran into the ideas of [Michel Westrate](https://twitter.com/mweststrate) and his React state management library, [Mobx](https://medium.com/@mweststrate/interactive-introduction-to-mobx-and-reactjs-1760e448103c). After putting it off for a while, I tried mobx out in one of my apps, and I have since used it as my global state management solution of choice.
 
-A caveat to this though: [Immer](https://github.com/mweststrate/immer) greatly reduces Redux reducer boilerplate, so that is worth a look. Also, react hooks are making possible some really interesting an elegant global state management solutions, a couple examples [here](https://medium.com/@Charles_Stover/manage-global-state-with-react-hooks-6065041b55b4) and [here](https://github.com/dai-shi/react-hooks-global-state)
+### Cons of Mobx as of May 1, 2019
 
-### No React.setState
+My biggest issue with Mobx is that the observable pattern runs counter to the direction of React and the majority of the React ecosystem.  Thus by choosing to use mobx, I am making my code less understandable to React developers whose mental models are adapted to using the flux pattern.  In addition, I'm introducing a net new, and non-trivial, abstraction of observables into my code, thus increasing the conceptual overhead of my solution.
 
-The main reason I love React is the bundling of view and behavior into components using the thin syntactic sugar on top of javascript called JSX. That said, from a developer experience perspective, I'm not a fan of React.setState and keeping component state in one large object. After having managed my shared state in Mobx stores for a while, I moved to using observables and computed values for my [local component state too](https://blog.cloudboost.io/3-reasons-why-i-stopped-using-react-setstate-ab73fc67a42e). All of this said, the current React Hooks proposal is likely to change this, as state can be used to manage individual values directly, and useMemo can provide easy momoized/computed values.
+### Reasons I'm sticking with Mobx as of May 1, 2019
+
+I was about to switch back to redux, leveraging [redux-react-hook](https://github.com/facebookincubator/redux-react-hook) and [immer](https://github.com/immerjs/immer) as means of reducing boilerplate and using hooks as a natural way to use state and dispatch within function components.  However, midway though this refactoring, I realized I felt I was moving in the wrong direction.  My main gripe with the redux approach is that now, to maintain a piece of state, instead of needing a single ES6 observable class with state and methods colocated, I need a reducer, action model, and action creators.  Immer and redux-react-hook help to make redux more ergonomic, but even with those improvements, the overhead and fragmented concepts needed to maintain redux state vs an observable class are still a high price to pay.  By choosing Mobx, I incur the costs associated with the cons listed above... but as of right now, I find choosing Mobx to be a net positive for productivity and simplicity of my codebase.
 
 ## No React Router
 
-Like many starting out with react, I started with React Router as my routing solution. However, when I started migrating to react router v4 from v3, I developed the opinion that having my components control my routes is backward in an application where the state of my components should be driven by the contents of my stores, not the other way around. So once again Michel Westrate writes [an article](https://hackernoon.com/how-to-decouple-state-and-ui-a-k-a-you-dont-need-componentwillmount-cc90b787aa37) laying out the reasons to ditch route aware components for a store based approach using the simple [director](https://github.com/flatiron/director) routing library. I couldn't be happier with the decision - my application routing is so much simpler than before.
+Like many starting out with react, I started with React Router as my routing solution. However, when I started migrating to react router v4 from v3, I developed the opinion that having my components control my routes is backward in an application where the state of my components should be driven by the contents of my stores, not the other way around. So once again Michel Westrate writes [an article](https://hackernoon.com/how-to-decouple-state-and-ui-a-k-a-you-dont-need-componentwillmount-cc90b787aa37) laying out the reasons to ditch route aware components for a store based approach using the simple [director](https://github.com/flatiron/director) routing library. 
 
 ## Function Components
 
@@ -77,4 +79,4 @@ The introduction of hooks has made it possible to create a react application wit
 
 ## Disclaimer
 
-This repository contains one set of technology choices and doesn't intend to claim the choices made are the best possible. I'm always looking to optimize my workflow, so if you have any interesting alternatives, please let me know!
+This repository contains one set of technology choices and doesn't intend to claim the choices made are the best possible. I'm always looking to optimize my tooling, so if you have any interesting alternatives, please let me know!
