@@ -31,13 +31,13 @@ export default class ViewStore {
   get currentRoute() {
     switch (this.currentPage) {
       case AppPage.Home:
-        return '/#/home'
+        return '/home'
       case AppPage.HooksDemo:
-        return '/#/hooks'
+        return '/hooks'
       case AppPage.ServerApiDemo:
-        return '/#/serverApi'
+        return '/serverApi'
       case AppPage.ComponentsDemos:
-        return '/#/components'
+        return '/components'
       default:
         throw new Error(`page not recognized ${this.currentPage}`)
     }
@@ -57,9 +57,8 @@ export default class ViewStore {
     })
     router.init()
     autorun(() => {
-      const path = this.currentRoute
-      if (path !== window.location.pathname)
-        window.history.pushState(null, '', path)
+      if (this.currentRoute !== window.location.pathname)
+        window.history.pushState(null, '', this.currentRoute)
     })
   }
 }

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --progress --inline",
+    "chrome": "google-chrome http://localhost:8000",
     "pack": "NODE_ENV=production webpack",
     "packWindows": "set NODE_ENV=production && webpack"
   },
